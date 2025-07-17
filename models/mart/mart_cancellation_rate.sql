@@ -1,4 +1,5 @@
 -- airport information, cancelled, date, diverted, wetterbedindung (windspeed) correlation
+-- 
 WITH cancellation_rate AS (
     SELECT 	
         origin,
