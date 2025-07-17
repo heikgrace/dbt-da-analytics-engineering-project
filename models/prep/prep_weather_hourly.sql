@@ -3,7 +3,21 @@ WITH hourly_data AS (
     FROM {{ref('staging_weather_hourly')}}
 ),
 add_features AS (
-    SELECT *
+    SELECT 
+		    airport_code
+            ,station_id
+            ,timestamp	
+            ,temp_c
+            ,dewpoint_c
+            ,humidity_perc
+            ,precipitation_mm
+            --,snow_mm
+            ,wind_direction
+            ,wind_speed_kmh
+            --,wind_peakgust_kmh
+            ,pressure_hpa 
+            --,sun_minutes
+            --,condition_code
 		, timestamp::DATE AS date               -- only date (hours:minutes:seconds) as DATE data type
 		, timestamp::TIME AS time                           -- only time (hours:minutes:seconds) as TIME data type
         , TO_CHAR(timestamp,'HH24:MI') as hour  -- time (hours:minutes) as TEXT data type
