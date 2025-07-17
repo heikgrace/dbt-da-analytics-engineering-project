@@ -1,5 +1,5 @@
 -- airport information, cancelled, date, diverted, wetterbedindung (windspeed) correlation
-WITH cancellationrate AS (
+WITH cancellation_rate AS (
     SELECT 	
         origin,
         dest,
@@ -13,4 +13,4 @@ WITH cancellationrate AS (
     ORDER BY flight_date 
 ) 
 SELECT * 
-FROM cancellationrate;
+FROM cancellation_rate
